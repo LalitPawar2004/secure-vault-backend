@@ -22,9 +22,7 @@ app.use(express.json());
 // Enable CORS
 app.use(cors({
   origin: [
-    'http://localhost:3000',
-    'https://secure-vault-frontend-one.vercel.app',  // Replace with your actual URL
-    'https://your-custom-domain.com'              // If you add custom domain
+    'https://secure-vault-frontend-one.vercel.app/'  // If you add custom domain
   ],
   credentials: true
 }));
