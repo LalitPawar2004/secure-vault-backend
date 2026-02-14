@@ -20,7 +20,16 @@ const app = express();
 app.use(express.json());
 
 // Enable CORS
-app.use(cors());
+// Update your CORS setup
+const cors = require('cors');
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://secure-vault-frontend.vercel.app', // You'll update this after frontend deploy
+    'https://your-frontend-domain.vercel.app'   // Add your actual domain
+  ],
+  credentials: true
+}));
 
 // Mount routers
 app.use('/api/auth', authRoutes);
