@@ -20,7 +20,14 @@ const app = express();
 app.use(express.json());
 
 // Enable CORS
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://secure-vault-frontend-one.vercel.app',  // Replace with your actual URL
+    'https://your-custom-domain.com'              // If you add custom domain
+  ],
+  credentials: true
+}));
 
 // Mount routers
 app.use('/api/auth', authRoutes);
